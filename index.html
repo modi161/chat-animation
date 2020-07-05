@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chat animation</title>
+    <style>
+      .img-con {
+        position: relative;
+      }
+
+      .img-con > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* display: none; */
+        opacity: 0;
+      }
+
+      .img-con > div.first {
+        display: block;
+        opacity: 1;
+        animation: fade-in 0.8s ease-in-out 0.2s;
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      .img-con > div.overlay {
+        /* display: block; */
+        opacity: 1;
+        transition: opacity 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img-con">
+      <div class="first"><img src="./first.png" /></div>
+      <div><img src="./second.png" /></div>
+      <div><img src="./third.png" /></div>
+      <div><img src="./fourth.png" /></div>
+    </div>
+
+    <script>
+      const imgs = document.querySelectorAll(".img-con div");
+
+      setTimeout(() => {
+        Array.from(imgs)[1].classList.add("overlay");
+      }, 1250);
+
+      setTimeout(() => {
+        Array.from(imgs)[2].classList.add("overlay");
+      }, 2500);
+
+      setTimeout(() => {
+        Array.from(imgs)[3].classList.add("overlay");
+      }, 3550);
+    </script>
+  </body>
+</html>
