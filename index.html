@@ -17,10 +17,28 @@
         opacity: 0;
       }
 
-      .img-con > div.first {
+      .img-con > div:first-of-type {
         display: block;
-        opacity: 1;
         animation: fade-in 0.8s ease-in-out 0.2s;
+        animation-fill-mode: both;
+      }
+
+      .img-con > div:nth-of-type(2) {
+        display: block;
+        animation: fade-in 0.8s ease-in-out 1.2s;
+        animation-fill-mode: both;
+      }
+
+      .img-con > div:nth-of-type(3) {
+        display: block;
+        animation: fade-in 0.8s ease-in-out 2.2s;
+        animation-fill-mode: both;
+      }
+
+      .img-con > div:last-of-type {
+        display: block;
+        animation: fade-in 0.8s ease-in-out 3.2s;
+        animation-fill-mode: both;
       }
 
       @keyframes fade-in {
@@ -32,12 +50,6 @@
           opacity: 1;
         }
       }
-
-      .img-con > div.overlay {
-        /* display: block; */
-        opacity: 1;
-        transition: opacity 0.5s;
-      }
     </style>
   </head>
   <body>
@@ -48,7 +60,7 @@
       <div><img src="./fourth.png" /></div>
     </div>
 
-    <script>
+    <!-- <script>
       const imgs = document.querySelectorAll(".img-con div");
 
       setTimeout(() => {
@@ -62,6 +74,6 @@
       setTimeout(() => {
         Array.from(imgs)[3].classList.add("overlay");
       }, 3550);
-    </script>
+    </script> -->
   </body>
 </html>
